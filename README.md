@@ -1,2 +1,1 @@
-# copy.github.io
-Copy
+# Copy
