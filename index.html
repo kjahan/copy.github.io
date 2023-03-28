@@ -31,9 +31,7 @@
                 }
             })
         }
-        if (showExample {
-            makeAPICall();
-        } else {
+        if (showExample) {
             for (let i = 0; i < sopEx2Parags.length; i++) {
                 parag = sopEx2Parags[i]
                 if (parag) {
@@ -43,7 +41,10 @@
                     var element = document.getElementById("sop");
                     element.appendChild(tag);
                 }
-            }
+            }            
+        } else {
+            // call backend
+            makeAPICall();
         }
         
     </script>
