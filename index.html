@@ -37,9 +37,11 @@
                 }
             })
         }
+
         if (showExample) {
-            for (let i = 0; i < sopEx2Parags.length; i++) {
-                parag = sopEx2Parags[i]
+            sopExParags = sopEx1Parags
+            for (let i = 0; i < sopExParags.length; i++) {
+                parag = sopExParags[i]
                 if (parag) {
                     var tag = document.createElement("p");
                     var text = document.createTextNode(parag);
