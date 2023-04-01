@@ -4,57 +4,66 @@
     <meta charset="utf-8"/>
     <title>Statement of Purpose Generator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .form-container {
+          margin: 50px;
+        }
+    </style>
 </head>
 <body>
+
 <h1>Statement of Purpose</h1>
   
-<form>
-  <div class="mb-3">
-    <label for="name" class="form-label">Name:</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+  <div class="container form-container">
+    <h1>Web Form Example</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="school-of-interest">School of Interest:</label>
+        <input type="text" class="form-control" id="school-of-interest" name="school-of-interest">
+      </div>
+      <div class="form-group">
+        <label for="department-of-interest">Department of Interest:</label>
+        <input type="text" class="form-control" id="department-of-interest" name="department-of-interest">
+      </div>
+      <div class="form-group">
+        <label for="program-of-interest">Program of Interest:</label>
+        <input type="text" class="form-control" id="program-of-interest" name="program-of-interest">
+      </div>
+      <div class="form-group">
+        <label for="field-of-interest">Field of Interest:</label>
+        <input type="text" class="form-control" id="field-of-interest" name="field-of-interest">
+      </div>
+      <div class="form-group">
+        <label for="current-problem">Current Problem:</label>
+        <textarea class="form-control" id="current-problem" name="current-problem"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="influences">Who Influenced Your Research Decision of Interest:</label>
+        <textarea class="form-control" id="influences" name="influences"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="research-choice">Why Did You Choose Your Research:</label>
+        <textarea class="form-control" id="research-choice" name="research-choice"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="research-field-choice">Why Did You Choose Your Research Field:</label>
+        <textarea class="form-control" id="research-field-choice" name="research-field-choice"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="undergrad-major-choice">Why Did You Choose Your Undergraduate Major:</label>
+        <textarea class="form-control" id="undergrad-major-choice" name="undergrad-major-choice"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="career-goal">What is Your Career Goal in 10 Years:</label>
+        <textarea class="form-control" id="career-goal" name="career-goal"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="school" class="form-label">School of interest:</label>
-    <input type="text" class="form-control" id="school" placeholder="Enter your school of interest">
-  </div>
-  <div class="mb-3">
-    <label for="department" class="form-label">Department of interest:</label>
-    <input type="text" class="form-control" id="department" placeholder="Enter your department of interest">
-  </div>
-  <div class="mb-3">
-    <label for="program" class="form-label">Program of interest:</label>
-    <input type="text" class="form-control" id="program" placeholder="Enter your program of interest">
-  </div>
-  <div class="mb-3">
-    <label for="field" class="form-label">Field of interest:</label>
-    <input type="text" class="form-control" id="field" placeholder="Enter your field of interest">
-  </div>
-  <div class="mb-3">
-    <label for="problem" class="form-label">Current problem:</label>
-    <textarea class="form-control" id="problem" rows="3" placeholder="Enter your current problem"></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="influence" class="form-label">Who influenced your research decision:</label>
-    <input type="text" class="form-control" id="influence" placeholder="Enter who influenced your research decision">
-  </div>
-  <div class="mb-3">
-    <label for="research-choice" class="form-label">Why did you choose your research:</label>
-    <textarea class="form-control" id="research-choice" rows="3" placeholder="Enter why you chose your research"></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="field-choice" class="form-label">Why did you choose your research field:</label>
-    <textarea class="form-control" id="field-choice" rows="3" placeholder="Enter why you chose your research field"></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="major-choice" class="form-label">Why did you choose your undergraduate major:</label>
-    <textarea class="form-control" id="major-choice" rows="3" placeholder="Enter why you chose your undergraduate major"></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="career-goal" class="form-label">Career goal in 10 years:</label>
-    <textarea class="form-control" id="career-goal" rows="3" placeholder="Enter your career goal in 10 years"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 
 <div id="sop">
 </div>
