@@ -9,30 +9,52 @@
 <h1>Statement of Purpose</h1>
 <div id="sop">
 </div>
+  
 <form>
   <div class="mb-3">
     <label for="name" class="form-label">Name:</label>
     <input type="text" class="form-control" id="name" placeholder="Enter your name">
   </div>
   <div class="mb-3">
-    <label for="brief-bio" class="form-label">Brief bio:</label>
-    <input type="text" class="form-control" id="brief-bio" placeholder="Enter your brief bio">
+    <label for="school" class="form-label">School of interest:</label>
+    <input type="text" class="form-control" id="school" placeholder="Enter your school of interest">
   </div>
-  <fieldset>
-    <legend>Target program applying</legend>
-    <div class="mb-3">
-      <label for="target-program-level" class="form-label">Program level:</label>
-      <input type="text" class="form-control" id="target-program-level" placeholder="Enter your program level">
-    </div>
-    <div class="mb-3">
-      <label for="target-program" class="form-label">Program:</label>
-      <input type="text" class="form-control" id="target-program" placeholder="Enter your program">
-    </div>
-    <div class="mb-3">
-      <label for="target-school" class="form-label">School:</label>
-      <input type="text" class="form-control" id="target-school" placeholder="Enter your school">
-    </div>
-  </fieldset>
+  <div class="mb-3">
+    <label for="department" class="form-label">Department of interest:</label>
+    <input type="text" class="form-control" id="department" placeholder="Enter your department of interest">
+  </div>
+  <div class="mb-3">
+    <label for="program" class="form-label">Program of interest:</label>
+    <input type="text" class="form-control" id="program" placeholder="Enter your program of interest">
+  </div>
+  <div class="mb-3">
+    <label for="field" class="form-label">Field of interest:</label>
+    <input type="text" class="form-control" id="field" placeholder="Enter your field of interest">
+  </div>
+  <div class="mb-3">
+    <label for="problem" class="form-label">Current problem:</label>
+    <textarea class="form-control" id="problem" rows="3" placeholder="Enter your current problem"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="influence" class="form-label">Who influenced your research decision:</label>
+    <input type="text" class="form-control" id="influence" placeholder="Enter who influenced your research decision">
+  </div>
+  <div class="mb-3">
+    <label for="research-choice" class="form-label">Why did you choose your research:</label>
+    <textarea class="form-control" id="research-choice" rows="3" placeholder="Enter why you chose your research"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="field-choice" class="form-label">Why did you choose your research field:</label>
+    <textarea class="form-control" id="field-choice" rows="3" placeholder="Enter why you chose your research field"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="major-choice" class="form-label">Why did you choose your undergraduate major:</label>
+    <textarea class="form-control" id="major-choice" rows="3" placeholder="Enter why you chose your undergraduate major"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="career-goal" class="form-label">Career goal in 10 years:</label>
+    <textarea class="form-control" id="career-goal" rows="3" placeholder="Enter your career goal in 10 years"></textarea>
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
@@ -40,7 +62,6 @@
 </body>
     <script defer>
         const URL = "https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/sops";
-        
         // SOP examples
         let showExample = true; 
         const sopEx1Parags = ["For as long as I can remember, I have been fascinated by the power of computing and its application in our lives. From my early days in Hong Kong University, where I earned a Bachelor degree in Computer Science, to my later studies at the University of Victoria, where I obtained a Master's degree in the same field, I have been continuously exploring the possibilities of technology. Of all the topics of study, Machine Learning and Image Recognition have been of particular interest to me.", "My fascination with these topics has compelled me to pursue a career as a software engineer at Broadcom Inc., where I have worked for the past thirteen years. Working at Broadcom has enabled me to gain a better understanding of the inner workings of computer networks and the advancements made in the field of Machine Learning.", "Now, I am eager to further my knowledge and expertise in the field of Computer Science and thought that the Graduate Program at Stanford University would be the perfect place to do so. At Stanford, I believe I will have the resources and guidance to pursue my research interests, and the opportunity to learn from the best in the field. It would be a great honor for me to be part of such a prestigious institution and I am confident that I can make a valuable contribution to the program.", "I am very excited at the prospect of joining the Graduate Program at Stanford University and would be grateful for the opportunity to continue my studies and research in a stimulating and supportive environment."];
