@@ -7,8 +7,6 @@
 </head>
 <body>
 <h1>Statement of Purpose</h1>
-<div id="sop">
-</div>
   
 <form>
   <div class="mb-3">
@@ -58,12 +56,15 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+<div id="sop">
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
     <script defer>
         const URL = "https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/sops";
         // SOP examples
-        let showExample = true; 
+        let showExample = false; 
         const sopEx1Parags = ["For as long as I can remember, I have been fascinated by the power of computing and its application in our lives. From my early days in Hong Kong University, where I earned a Bachelor degree in Computer Science, to my later studies at the University of Victoria, where I obtained a Master's degree in the same field, I have been continuously exploring the possibilities of technology. Of all the topics of study, Machine Learning and Image Recognition have been of particular interest to me.", "My fascination with these topics has compelled me to pursue a career as a software engineer at Broadcom Inc., where I have worked for the past thirteen years. Working at Broadcom has enabled me to gain a better understanding of the inner workings of computer networks and the advancements made in the field of Machine Learning.", "Now, I am eager to further my knowledge and expertise in the field of Computer Science and thought that the Graduate Program at Stanford University would be the perfect place to do so. At Stanford, I believe I will have the resources and guidance to pursue my research interests, and the opportunity to learn from the best in the field. It would be a great honor for me to be part of such a prestigious institution and I am confident that I can make a valuable contribution to the program.", "I am very excited at the prospect of joining the Graduate Program at Stanford University and would be grateful for the opportunity to continue my studies and research in a stimulating and supportive environment."];
         const sopEx2Parags = ["My interest in sociology began at a very young age. Growing up in a small town in Canada, I was exposed to a variety of different cultures and beliefs. As I grew older, I came to understand the importance of understanding and appreciating the complexities of human social behavior. This realization led me to pursue a degree in sociology at the University of Victoria.", "At the University of Victoria, I was able to further explore and analyze the different aspects of societies and their interactions with one another. With a focus on global societies, I was able to gain a greater understanding of the social structures that shape our world. Additionally, I was able to explore the various theories and concepts related to sociology and the study of human behavior.", "Moreover, my time at the University of Victoria gave me the opportunity to explore my passion for playing the piano. Although I had been playing the piano since I was 6, my time at University allowed me to hone my skills and participate in numerous recitals and competitions. I believe my experience in the performing arts has equipped me with the ability to think creatively, which I believe is an important skill to have when studying sociology.", "After completing my undergraduate degree, I decided to pursue a master's degree in sociology at Yonsei University in South Korea. During my time at Yonsei, I was able to further explore topics such as social movements, intercultural communication, and the sociology of religion. Additionally, I was able to gain a greater understanding of the complexities of social structures in different countries; this has helped me better understand the implications of globalization and migration.", "Now, I am eager to continue my education and apply the knowledge and skills I have gained to a doctoral program in sociology. I am confident that the sociology program at the University of California, Berkeley is the perfect place to pursue this goal. With its renowned faculty and diverse student body, I am certain that I can continue to develop my understanding of sociology and apply it to real-world situations. Additionally, I believe the research opportunities and resources provided by the program would be invaluable to my continued development as a scholar.", "Thank you for your consideration. I am excited to have the opportunity to further my education in sociology at the University of California, Berkeley."];
         
@@ -102,7 +103,8 @@
             }            
         } else {
             // call backend
-            makeAPICall();
+            // makeAPICall();
+            console.log("done);
         }
         
     </script>
