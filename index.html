@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
     <meta charset="utf-8"/>
     <title>Statement of Purpose Generator</title>
@@ -14,79 +15,111 @@
 
   <div class="container form-container">
     <h1>Statement of Purpose</h1>
-    <form id="sop-form">
+    <div id="sop"></div>
+    <form id="sop_form">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name" name="name">
       </div>
       <div class="form-group">
-        <label for="school-of-interest">School of Interest:</label>
-        <input type="text" class="form-control" id="school-of-interest" name="school-of-interest">
+        <label for="school_of_interest">School of Interest:</label>
+        <input type="text" class="form-control" id="school_of_interest" name="school_of_interest">
       </div>
       <div class="form-group">
-        <label for="department-of-interest">Department of Interest:</label>
-        <input type="text" class="form-control" id="department-of-interest" name="department-of-interest">
+        <label for="department_of_interest">Department of Interest:</label>
+        <input type="text" class="form-control" id="department_of_interest" name="department_of_interest">
       </div>
       <div class="form-group">
-        <label for="program-of-interest">Program of Interest:</label>
-        <input type="text" class="form-control" id="program-of-interest" name="program-of-interest">
+        <label for="program_of_interest">Program of Interest:</label>
+        <input type="text" class="form-control" id="program_of_interest" name="program_of_interest">
       </div>
       <div class="form-group">
-        <label for="field-of-interest">Field of Interest:</label>
-        <input type="text" class="form-control" id="field-of-interest" name="field-of-interest">
+        <label for="field_of_interest">Field of Interest:</label>
+        <input type="text" class="form-control" id="field_of_interest" name="field_of_interest">
       </div>
       <div class="form-group">
-        <label for="current-problem">Current Problem:</label>
-        <textarea class="form-control" id="current-problem" name="current-problem"></textarea>
+        <label for="current_problem">Current Problem:</label>
+        <textarea class="form-control" id="current_problem" name="current_problem"></textarea>
       </div>
       <div class="form-group">
         <label for="influences">Who Influenced Your Research Decision of Interest:</label>
         <textarea class="form-control" id="influences" name="influences"></textarea>
       </div>
       <div class="form-group">
-        <label for="research-choice">Why Did You Choose Your Research:</label>
-        <textarea class="form-control" id="research-choice" name="research-choice"></textarea>
+        <label for="research_choice">Why Did You Choose Your Research:</label>
+        <textarea class="form-control" id="research_choice" name="research_choice"></textarea>
       </div>
       <div class="form-group">
-        <label for="research-field-choice">Why Did You Choose Your Research Field:</label>
-        <textarea class="form-control" id="research-field-choice" name="research-field-choice"></textarea>
+        <label for="research_field_choice">Why Did You Choose Your Research Field:</label>
+        <textarea class="form-control" id="research_field_choice" name="research_field_choice"></textarea>
       </div>
       <div class="form-group">
-        <label for="undergrad-major-choice">Why Did You Choose Your Undergraduate Major:</label>
-        <textarea class="form-control" id="undergrad-major-choice" name="undergrad-major-choice"></textarea>
+        <label for="undergrad_major_choice">Why Did You Choose Your Undergraduate Major:</label>
+        <textarea class="form-control" id="undergrad_major_choice" name="undergrad_major_choice"></textarea>
       </div>
       <div class="form-group">
-        <label for="career-goal">What is Your Career Goal in 10 Years:</label>
-        <textarea class="form-control" id="career-goal" name="career-goal"></textarea>
+        <label for="career_goal">What is Your Career Goal in 10 Years:</label>
+        <textarea class="form-control" id="career_goal" name="career_goal"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input class="form-control" type="password" id="password" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="postData(event)">Submit</button>
     </form>
   </div>
 
-<div id="sop">
-</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-    <script defer>
-// this is the id of the form
-$("#sop-form").submit(function(e) {
-    const actionUrl  = "https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/sops"
-    e.preventDefault(); // avoid to execute the actual submit of the form.
+  <script>
+    function postData(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const password = document.getElementById('password').value;
+      const school_of_interest = document.getElementById('school_of_interest').value;
+      const department_of_interest = document.getElementById('department_of_interest').value;
+      const program_of_interest = document.getElementById('program_of_interest').value;
+      const field_of_interest = document.getElementById('field_of_interest').value;
+      const current_problem = document.getElementById('current_problem').value;
+      const influences = document.getElementById('influences').value;
+      const research_choice = document.getElementById('research_choice').value;
+      const research_field_choice = document.getElementById('research_field_choice').value;
+      const undergrad_major_choice = document.getElementById('undergrad_major_choice').value;
+      const career_goal = document.getElementById('career_goal').value;
 
-    var form = $(this);
-    //var actionUrl = form.attr('action');
-    
-    $.ajax({
-        type: "POST",
-        url: actionUrl,
-        data: form.serialize(), // serializes the form's elements.
-        success: function(data)
-        {
-          alert(data); // show response from the php script.
-        }
-    });
-    
-});        
-    </script>
+
+      fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/sops', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(
+          { 
+            password: password,
+            name: name,
+            school_of_interest: school_of_interest,
+            department_of_interest: department_of_interest,
+            program_of_interest: program_of_interest,
+            field_of_interest: field_of_interest,
+            current_problem: current_problem,
+            influences: influences,
+            research_choice: research_choice,
+            research_field_choice: research_field_choice,
+            undergrad_major_choice: undergrad_major_choice,
+            career_goal: career_goal
+          }
+        )
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('sop').innerHTML = data.sop;
+        document.getElementById('sop_form').style.display = 'none'; // Hide the form
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
 </html>
