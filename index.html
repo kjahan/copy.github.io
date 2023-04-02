@@ -83,7 +83,6 @@
         <input class="form-control" type="password" id="password" name="password">
       </div>
       <button type="submit" class="btn btn-primary" onclick="submitData(event)">Generate My SOP!</button>
-      <!-- <button type="submit" class="btn btn-primary">Generate My SOP!</button> -->
     </form>
   </div>
 
@@ -136,7 +135,7 @@
               career_goal: career_goal
             }
           )
-        })
+        }, { mode: 'no-cors'})
         .then(response => response.json())
         .then(data => {
           document.getElementById('sop').innerHTML = data.sop;
