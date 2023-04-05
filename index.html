@@ -33,7 +33,7 @@
   <div class="container form-container">
     <h1>Statement of Purpose</h1>
     <div id="sop"></div>
-    <form name="sop_form">
+    <form id="sop_form">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Alex Yu">
@@ -139,7 +139,7 @@
         .then(response => response.json())
         .then(data => {
           document.getElementById('sop').innerHTML = data.sop;
-          document.getElementById('sop_form').style.display = 'none'; // Hide the form
+          document.getElementById("sop_form").style.display="none"; // Hide the form
         })
         .catch(error => {
           console.error('Error:', error);
