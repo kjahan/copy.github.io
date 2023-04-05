@@ -42,10 +42,10 @@
         <label for="school_of_interest">School of Interest:</label>
         <input type="text" class="form-control" id="school_of_interest" name="school_of_interest" placeholder="University of Waterloo">
       </div>
-      <div class="form-group">
+<!--       <div class="form-group">
         <label for="department_of_interest">Department of Interest:</label>
         <input type="text" class="form-control" id="department_of_interest" name="department_of_interest" placeholder="Math">
-      </div>
+      </div> -->
       <div class="form-group">
         <label for="program_of_interest">Program of Interest:</label>
         <input type="text" class="form-control" id="program_of_interest" name="program_of_interest" placeholder="Computer Science">
@@ -99,7 +99,7 @@
       var name = document.getElementById('name').value;
       var password = document.getElementById('password').value;
       var school_of_interest = document.getElementById('school_of_interest').value;
-      var department_of_interest = document.getElementById('department_of_interest').value;
+      //var department_of_interest = document.getElementById('department_of_interest').value;
       var program_of_interest = document.getElementById('program_of_interest').value;
       var field_of_interest = document.getElementById('field_of_interest').value;
       var current_problem = document.getElementById('current_problem').value;
@@ -110,7 +110,8 @@
       var career_goal = document.getElementById('career_goal').value;
 
 
-      if (name === "" || school_of_interest === "" || department_of_interest === "" || program_of_interest === "") {
+      //if (name === "" || school_of_interest === "" || department_of_interest === "" || program_of_interest === "") {
+      if (name === "" || school_of_interest === "" || program_of_interest === "") {
         alert("Please fill in all required fields.");
         return false;
       } else {
@@ -124,7 +125,7 @@
               password: password,
               name: name,
               school_of_interest: school_of_interest,
-              department_of_interest: department_of_interest,
+              //department_of_interest: department_of_interest,
               program_of_interest: program_of_interest,
               field_of_interest: field_of_interest,
               current_problem: current_problem,
