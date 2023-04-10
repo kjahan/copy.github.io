@@ -110,11 +110,35 @@
       var research_field_choice = document.getElementById('research_field_choice').value;
       var undergrad_major_choice = document.getElementById('undergrad_major_choice').value;
       var career_goal = document.getElementById('career_goal').value;
-
       if (name === "" || current_program === "" || current_school === "" || school_of_interest === "" || program_of_interest === "" || password === "") {
         alert("Please fill all required fields.");
         return false;
-      } else {
+      }
+      if (name === "") {
+        alert("Please enter your full name!");
+        return false;
+      }
+      else if (current_program === "") {
+        alert("Please enter your current program!");
+        return false;
+      }
+      else if (current_school === "") {
+        alert("Please enter your current school!");
+        return false;
+      }
+      else if (school_of_interest === "") {
+        alert("Please enter your school of interest!");
+        return false;
+      }
+      else if (program_of_interest === "") {
+        alert("Please enter your program of interest!");
+        return false;
+      } 
+      else if (password === "") {
+        alert("Please enter your password!");
+        return false;
+      }
+      else {
         fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/sops', {
           method: 'POST',
           headers: {
