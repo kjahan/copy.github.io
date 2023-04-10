@@ -40,7 +40,7 @@
       </div>
       <div class="form-group">
         <label for="cutrrent_degree">Current Degree</label>
-        <input type="text" class="form-control" id="cutrrent_degree" name="cutrrent_degree" placeholder="Bachelor Degree in Computer Science">
+        <input type="text" class="form-control" id="current_degree" name="current_degree" placeholder="Bachelor Degree in Computer Science">
       </div>
       <div class="form-group">
         <label for="department_of_interest">Current School</label>
@@ -99,8 +99,8 @@
 
       var name = document.getElementById('name').value;
       var password = document.getElementById('password').value;
-      var cutrrent_degree = document.getElementById('cutrrent_degree').value;
-      var cutrrent_school = document.getElementById('cutrrent_school').value;
+      var current_degree = document.getElementById('current_degree').value;
+      var current_school = document.getElementById('current_school').value;
       var school_of_interest = document.getElementById('school_of_interest').value;
       var program_of_interest = document.getElementById('program_of_interest').value;
       var field_of_interest = document.getElementById('field_of_interest').value;
@@ -111,9 +111,7 @@
       var undergrad_major_choice = document.getElementById('undergrad_major_choice').value;
       var career_goal = document.getElementById('career_goal').value;
 
-
-      //if (name === "" || school_of_interest === "" || department_of_interest === "" || program_of_interest === "") {
-      if (name === "" || cutrrent_degree === "" || current_school === "" || school_of_interest === "" || program_of_interest === "" || password === "") {
+      if (name === "" || current_school === "" || current_school === "" || school_of_interest === "" || program_of_interest === "" || password === "") {
         alert("Please fill all required fields.");
         return false;
       } else {
@@ -126,8 +124,8 @@
             { 
               password: password,
               name: name,
-              cutrrent_degree: cutrrent_degree,
-              cutrrent_school: cutrrent_school,
+              current_degree: current_degree,
+              current_school: current_school,
               school_of_interest: school_of_interest,
               program_of_interest: program_of_interest,
               field_of_interest: field_of_interest,
