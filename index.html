@@ -39,20 +39,20 @@
         <input type="text" class="form-control" id="name" name="name" placeholder="Alex Yu">
       </div>
       <div class="form-group">
-        <label for="cutrrent_degree">Current Degree</label>
-        <input type="text" class="form-control" id="current_degree" name="current_degree" placeholder="Bachelor Degree in Computer Science">
+        <label for="cutrrent_degree">Current Program</label>
+        <input type="text" class="form-control" id="current_program" name="current_program" placeholder="Bachelor Degree in Computer Science">
       </div>
       <div class="form-group">
-        <label for="department_of_interest">Current School</label>
+        <label for="current_school">Current School</label>
         <input type="text" class="form-control" id="current_school" name="current_school" placeholder="University of Washington">
-      </div>
-      <div class="form-group">
-        <label for="school_of_interest">School of Interest</label>
-        <input type="text" class="form-control" id="school_of_interest" name="school_of_interest" placeholder="University of Waterloo">
       </div>
       <div class="form-group">
         <label for="program_of_interest">Program of Interest</label>
         <input type="text" class="form-control" id="program_of_interest" name="program_of_interest" placeholder="Master Degree in Computer Science">
+      </div> 
+      <div class="form-group">
+        <label for="school_of_interest">School of Interest</label>
+        <input type="text" class="form-control" id="school_of_interest" name="school_of_interest" placeholder="University of Waterloo">
       </div>
       <div class="form-group">
         <label for="field_of_interest">Fields of Interest</label>
@@ -99,7 +99,7 @@
 
       var name = document.getElementById('name').value;
       var password = document.getElementById('password').value;
-      var current_degree = document.getElementById('current_degree').value;
+      var current_program = document.getElementById('current_program').value;
       var current_school = document.getElementById('current_school').value;
       var school_of_interest = document.getElementById('school_of_interest').value;
       var program_of_interest = document.getElementById('program_of_interest').value;
@@ -111,7 +111,7 @@
       var undergrad_major_choice = document.getElementById('undergrad_major_choice').value;
       var career_goal = document.getElementById('career_goal').value;
 
-      if (name === "" || current_school === "" || current_school === "" || school_of_interest === "" || program_of_interest === "" || password === "") {
+      if (name === "" || current_program === "" || current_school === "" || school_of_interest === "" || program_of_interest === "" || password === "") {
         alert("Please fill all required fields.");
         return false;
       } else {
@@ -124,7 +124,7 @@
             { 
               password: password,
               name: name,
-              current_degree: current_degree,
+              current_program: current_program,
               current_school: current_school,
               school_of_interest: school_of_interest,
               program_of_interest: program_of_interest,
