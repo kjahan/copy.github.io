@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8"/>
+    <title>Statement of Purpose Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .form-container {
+          max-width: 600px; /* Set the maximum width of the container */
+          margin: 50px;
+        }
+      .form-group {
+        margin-bottom: 20px;
+      }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #0069d9;
+    }      
+    </style>
+</head>
+<body>
+
+  <div class="container form-container">
+    <h1>Statement of Purpose</h1>
+    <div id="sop"></div>
+    <form id="sop_form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Alex Yu">
+      </div>
+      <div class="form-group">
+        <label for="cutrrent_degree">Current Program</label>
+        <input type="text" class="form-control" id="current_program" name="current_program" placeholder="Bachelor Degree in Computer Science">
+      </div>
+      <div class="form-group">
+        <label for="current_school">Current School</label>
+        <input type="text" class="form-control" id="current_school" name="current_school" placeholder="University of Washington">
+      </div>
+      <div class="form-group">
+        <label for="program_of_interest">Program of Interest</label>
+        <input type="text" class="form-control" id="program_of_interest" name="program_of_interest" placeholder="Master Degree in Computer Science">
+      </div> 
+      <div class="form-group">
+        <label for="school_of_interest">School of Interest</label>
+        <input type="text" class="form-control" id="school_of_interest" name="school_of_interest" placeholder="University of Waterloo">
+      </div>
+      <div class="form-group">
+        <label for="field_of_interest">Fields of Interest</label>
+        <input type="text" class="form-control" id="field_of_interest" name="field_of_interest" placeholder="Artificial Intelligence and specifically reinforcement learning.">
+      </div>
+      <div class="form-group">
+        <label for="current_problem">Current Problem</label>
+        <textarea class="form-control" id="current_problem" name="current_problem" placeholder="How to create a generic AI using reinforcement learning?"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="undergrad_major_choice">Why Did You Choose Your Undergraduate Major?</label>
+        <textarea class="form-control" id="undergrad_major_choice" name="undergrad_major_choice" placeholder="Computer science is a field that is constantly evolving, with new innovations and ideas emerging regularly."></textarea>
+      </div> 
+      <div class="form-group">
+        <label for="influences">Who influenced your research decision of interest?</label>
+        <textarea class="form-control" id="influences" name="influences" placeholder="Richard Sutton"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="research_choice">Why did you choose your research?</label>
+        <textarea class="form-control" id="research_choice" name="research_choice" placeholder="I want to develop a generic AI to help people make smart decisions."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="research_field_choice">Why did you choose your research field?</label>
+        <textarea class="form-control" id="research_field_choice" name="research_field_choice" placeholder="Artificial intelligence is seen as central to the digital transformation of society."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="career_goal">What is your career goal in 10 years?</label>
+        <textarea class="form-control" id="career_goal" name="career_goal" placeholder="Developing cutting-edge AI algorithms; Creating more sophisticated chatbots and virtual assistants; Developing new AI applications."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="submitData(event)">Generate My SOP!</button>
+    </form>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+  <script>
+    function submitData(event) {
+      event.preventDefault();
+
+      var name = document.getElementById('name').value;
+      var password = document.getElementById('password').value;
+      var current_program = document.getElementById('current_program').value;
+      var current_school = document.getElementById('current_school').value;
+      var school_of_interest = document.getElementById('school_of_interest').value;
+      var program_of_interest = document.getElementById('program_of_interest').value;
+      var field_of_interest = document.getElementById('field_of_interest').value;
+      var current_problem = document.getElementById('current_problem').value;
+      var influences = document.getElementById('influences').value;
+      var research_choice = document.getElementById('research_choice').value;
+      var research_field_choice = document.getElementById('research_field_choice').value;
+      var undergrad_major_choice = document.getElementById('undergrad_major_choice').value;
+      var career_goal = document.getElementById('career_goal').value;
+      if (name === "" || current_program === "" || current_school === "" || school_of_interest === "" || program_of_interest === "" || password === "") {
+        alert("Please fill all required fields.");
+        return false;
+      }
+      if (name === "") {
+        alert("Please enter your full name!");
+        return false;
+      }
+      else if (current_program === "") {
+        alert("Please enter your current program!");
+        return false;
+      }
+      else if (current_school === "") {
+        alert("Please enter your current school!");
+        return false;
+      }
+      else if (school_of_interest === "") {
+        alert("Please enter your school of interest!");
+        return false;
+      }
+      else if (program_of_interest === "") {
+        alert("Please enter your program of interest!");
+        return false;
+      } 
+      else if (password === "") {
+        alert("Please enter your password!");
+        return false;
+      }
+      else {
+        fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/sops', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(
+            { 
+              password: password,
+              name: name,
+              current_program: current_program,
+              current_school: current_school,
+              school_of_interest: school_of_interest,
+              program_of_interest: program_of_interest,
+              field_of_interest: field_of_interest,
+              current_problem: current_problem,
+              influences: influences,
+              research_choice: research_choice,
+              research_field_choice: research_field_choice,
+              undergrad_major_choice: undergrad_major_choice,
+              career_goal: career_goal
+            }
+          )
+        }, { mode: 'no-cors'})
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('sop').innerHTML = data.sop;
+          document.getElementById("sop_form").style.display="none"; // Hide the form
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+
+    }
+  </script>
+
+</html>
