@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8"/>
+    <title>Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .form-container {
+          max-width: 600px; /* Set the maximum width of the container */
+          margin: 50px;
+        }
+      .form-group {
+        margin-bottom: 20px;
+      }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #0069d9;
+    }      
+    </style>
+</head>
+<body>
+
+  <div class="container form-container">
+    <h1>Paraphraser Tool</h1>
+    <div id="paraphrased"></div>
+    <form id="paraphraser_form">
+
+      <div class="form-outline">
+        <label class="form-label" for="textArea">Type Your Text</label>
+        <textarea class="form-control" id="textArea" rows="10" placeholder="Generative AI can seem like magic. Image generators such as Stable Diffusion, Midjourney, or DALL·E 2 can produce remarkable visuals in styles from aged photographs and water colors to pencil drawings and Pointillism. The resulting products can be fascinating — both quality and speed of creation are elevated compared to average human performance. The Museum of Modern Art in New York hosted an AI-generated installation generated from the museum’s own collection, and the Mauritshuis in The Hague hung an AI variant of Vermeer’s Girl with a Pearl Earring while the original was away on loan."></textarea>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="submitData(event)">Paraphrase My Text!</button>
+    </form>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+  <script>
+    function submitData(event) {
+      event.preventDefault();
+
+      var textArea = document.getElementById('textArea').value;
+      var password = document.getElementById('password').value;
+
+      if (textArea === "" || password === "") {
+        alert("Please fill all required fields.");
+        return false;
+      }
+      if (textArea === "") {
+        alert("Please enter your text!");
+        return false;
+      }
+      else if (password === "") {
+        alert("Please enter your password!");
+        return false;
+      }
+      else {
+        fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/coverletter', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(
+            { 
+              password: password,
+              textArea: textArea
+            }
+          )
+        }, { mode: 'no-cors'})
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('paraphrased').innerHTML = data.paraphrased;
+          document.getElementById("paraphraser_form").style.display="none"; // Hide the form
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+
+    }
+  </script>
+
+</html>
