@@ -153,7 +153,7 @@
         }, { mode: 'no-cors'})
         .then(response => response.json())
         .then(data => {
-          document.getElementById('cl').innerHTML = data.cl;
+          document.getElementById('cl').innerHTML = data.content;
           document.getElementById("cl_form").style.display="none"; // Hide the form
         })
         .catch(error => {

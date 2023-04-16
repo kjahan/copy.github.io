@@ -86,7 +86,7 @@
         }, { mode: 'no-cors'})
         .then(response => response.json())
         .then(data => {
-          document.getElementById('email').innerHTML = data.email;
+          document.getElementById('email').innerHTML = data.content;
           document.getElementById("email_form").style.display="none"; // Hide the form
         })
         .catch(error => {

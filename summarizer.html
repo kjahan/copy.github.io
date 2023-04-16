@@ -94,7 +94,7 @@ Getty announced last month that it has “commenced legal proceedings in the Hig
         }, { mode: 'no-cors'})
         .then(response => response.json())
         .then(data => {
-          document.getElementById('summary').innerHTML = data.summary;
+          document.getElementById('summary').innerHTML = data.content;
           document.getElementById("summarizer_form").style.display="none"; // Hide the form
         })
         .catch(error => {

@@ -86,7 +86,7 @@
         }, { mode: 'no-cors'})
         .then(response => response.json())
         .then(data => {
-          document.getElementById('paraphrased').innerHTML = data.paraphrased;
+          document.getElementById('paraphrased').innerHTML = data.content;
           document.getElementById("paraphraser_form").style.display="none"; // Hide the form
         })
         .catch(error => {
