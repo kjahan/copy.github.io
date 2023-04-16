@@ -3,7 +3,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
     <meta charset="utf-8"/>
-    <title>Cover Letter Generator</title>
+    <title>Summarizer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         .form-container {
@@ -31,13 +31,21 @@
 <body>
 
   <div class="container form-container">
-    <h1>Paraphraser Tool</h1>
-    <div id="paraphrased"></div>
-    <form id="paraphraser_form">
+    <h1>Summarizer Tool</h1>
+    <div id="summary"></div>
+    <form id="summarizer_form">
 
       <div class="form-outline">
         <label class="form-label" for="textArea">Type Your Text</label>
-        <textarea class="form-control" id="textArea" rows="10" placeholder="Generative AI can seem like magic. Image generators such as Stable Diffusion, Midjourney, or DALL·E 2 can produce remarkable visuals in styles from aged photographs and water colors to pencil drawings and Pointillism. The resulting products can be fascinating — both quality and speed of creation are elevated compared to average human performance. The Museum of Modern Art in New York hosted an AI-generated installation generated from the museum’s own collection, and the Mauritshuis in The Hague hung an AI variant of Vermeer’s Girl with a Pearl Earring while the original was away on loan."></textarea>
+        <textarea class="form-control" id="textArea" rows="14" placeholder="etty Images has filed a lawsuit in the US against Stability AI, creators of open-source AI art generator Stable Diffusion, escalating its legal battle against the firm.
+
+The stock photography company is accusing Stability AI of “brazen infringement of Getty Images’ intellectual property on a staggering scale.” It claims that Stability AI copied more than 12 million images from its database “without permission ... or compensation ... as part of its efforts to build a competing business,” and that the startup has infringed on both the company’s copyright and trademark protections.
+
+The lawsuit is the latest volley in the ongoing legal struggle between the creators of AI art generators and rights-holders. AI art tools require illustrations, artwork, and photographs to use as training data, and often scrape it from the web without the creator’s consent.
+
+The latest in a fast-developing legal battle between AI startups and rights’ holders
+
+Getty announced last month that it has “commenced legal proceedings in the High Court of Justice in London” against Stability AI. However, that claim has not yet been served, and the company did not say at the time whether or not it also intended to pursue legal action in the US. Stability AI is also being sued in US along with another AI art startup, Midjourney, by a trio of artists who are seeking a class action lawsuit."></textarea>
       </div>
       <br/>
 
@@ -45,7 +53,7 @@
         <label for="password">Password</label>
         <input class="form-control" type="password" id="password" name="password">
       </div>
-      <button type="submit" class="btn btn-primary" onclick="submitData(event)">Paraphrase My Text!</button>
+      <button type="submit" class="btn btn-primary" onclick="submitData(event)">Summarize My Text!</button>
     </form>
   </div>
 
@@ -72,7 +80,7 @@
         return false;
       }
       else {
-        fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/paraphraser', {
+        fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/summarizer', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -86,8 +94,8 @@
         }, { mode: 'no-cors'})
         .then(response => response.json())
         .then(data => {
-          document.getElementById('paraphrased').innerHTML = data.paraphrased;
-          document.getElementById("paraphraser_form").style.display="none"; // Hide the form
+          document.getElementById('summary').innerHTML = data.summary;
+          document.getElementById("summarizer_form").style.display="none"; // Hide the form
         })
         .catch(error => {
           console.error('Error:', error);
