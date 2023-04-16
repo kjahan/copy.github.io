@@ -73,12 +73,10 @@
           <input type="text" class="form-control" id="experience_years" name="experience_years" placeholder="5">
         </div>
       </div>
-      <br/>
-
       <h3 id="hdngOnBoarding" class="h3-v2" role="heading" aria-level="1"><span class="h-text">What’s your most recent job title?</span></h3>
       <div class="form-group">
-        <label for="current_position">Job Title</label>
-        <input type="text" class="form-control" id="current_position" name="current_position" placeholder="Software Engineer">
+        <label for="recent_position">Job Title</label>
+        <input type="text" class="form-control" id="recent_position" name="recent_position" placeholder="Software Engineer">
       </div>
       <br/>
 
@@ -104,7 +102,7 @@
       var skills = document.getElementById('skills').value;
       var strengths = document.getElementById('strengths').value;
       var experience_years = document.getElementById('experience_years').value;
-      var current_position = document.getElementById('current_position').value;
+      var recent_position = document.getElementById('recent_position').value;
 
       if (name === "" || position === "" || company === "" || skills === "" || strengths === "" || password === "") {
         alert("Please fill all required fields.");
@@ -149,7 +147,7 @@
               skills: skills,
               strengths: strengths,
               experience_years: experience_years,
-              current_position: current_position
+              recent_position: recent_position
             }
           )
         }, { mode: 'no-cors'})
