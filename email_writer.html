@@ -37,7 +37,7 @@
 
       <div class="form-outline">
         <label class="form-label" for="textArea">Type Your Instructions</label>
-        <textarea class="form-control" id="textArea" rows="6" placeholder="Write an email to my lawyer and tell them I can't attend Biometrics appointments on August 27th since I  have to go to New York for a conference from August 24 to 27th. Ask them to reschedule the appointment for a time either before August 24th or after 27th."></textarea>
+        <textarea class="form-control" id="textArea" rows="6" placeholder="Write an email to my lawyer and tell them I can't attend Biometrics appointment on January 27th since I  have to go to New York for a conference from January 24 to 27th. Ask them to reschedule the appointment for a time either before January 24th or after 27th."></textarea>
       </div>
       <br/>
 
@@ -72,7 +72,7 @@
         return false;
       }
       else {
-        fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/email', {
+        fetch('https://qzxtt5hfzh.execute-api.us-east-2.amazonaws.com/dev/emails', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -80,7 +80,7 @@
           body: JSON.stringify(
             { 
               password: password,
-              textArea: textArea
+              instruction: textArea
             }
           )
         }, { mode: 'no-cors'})
