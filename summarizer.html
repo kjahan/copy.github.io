@@ -37,7 +37,7 @@
 
       <div class="form-outline">
         <label class="form-label" for="textArea">Type Your Text</label>
-        <textarea class="form-control" id="textArea" rows="14" placeholder="etty Images has filed a lawsuit in the US against Stability AI, creators of open-source AI art generator Stable Diffusion, escalating its legal battle against the firm.
+        <textarea class="form-control" id="textArea" rows="14" placeholder="Getty Images has filed a lawsuit in the US against Stability AI, creators of open-source AI art generator Stable Diffusion, escalating its legal battle against the firm.
 
 The stock photography company is accusing Stability AI of “brazen infringement of Getty Images’ intellectual property on a staggering scale.” It claims that Stability AI copied more than 12 million images from its database “without permission ... or compensation ... as part of its efforts to build a competing business,” and that the startup has infringed on both the company’s copyright and trademark protections.
 
@@ -80,7 +80,7 @@ Getty announced last month that it has “commenced legal proceedings in the Hig
         return false;
       }
       else {
-        fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/summarizer', {
+        fetch('https://kytcp1zefh.execute-api.us-east-2.amazonaws.com/dev/summaries', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ Getty announced last month that it has “commenced legal proceedings in the Hig
           body: JSON.stringify(
             { 
               password: password,
-              textArea: textArea
+              text: textArea
             }
           )
         }, { mode: 'no-cors'})
