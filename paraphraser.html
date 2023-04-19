@@ -72,7 +72,7 @@
         return false;
       }
       else {
-        fetch('https://vhz7dsbv51.execute-api.us-east-2.amazonaws.com/dev/paraphraser', {
+        fetch('https://43bvrt41mj.execute-api.us-east-2.amazonaws.com/dev/paraphrases', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -80,7 +80,7 @@
           body: JSON.stringify(
             { 
               password: password,
-              textArea: textArea
+              text: textArea
             }
           )
         }, { mode: 'no-cors'})
